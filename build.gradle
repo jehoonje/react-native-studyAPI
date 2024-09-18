@@ -8,7 +8,8 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.12'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-    id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+    // QueryDSL 플러그인 주석 처리
+    // id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
 
 jar {
@@ -44,25 +45,31 @@ dependencies {
     // 이메일 전송 라이브러리
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
-    // 스프링 시큐리티 모듈
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // 스프링 시큐리티 모듈 주석 처리
+    // implementation 'org.springframework.boot:spring-boot-starter-security'
 
-    //querydsl 추가
+    // QueryDSL 관련 의존성 주석 처리
+    /*
+    // querydsl 추가
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     annotationProcessor "com.querydsl:querydsl-apt:${queryDslVersion}"
+    */
 
-    // json web token 라이브러리
+    // json web token 라이브러리 주석 처리
+    /*
     implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
     implementation 'io.jsonwebtoken:jjwt-impl:0.11.2'
     implementation 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+    */
 }
 
 tasks.named('test') {
-//	useJUnitPlatform()
+    //	useJUnitPlatform()
     exclude('**/*')
 }
 
-// querydsl 추가 시작
+// QueryDSL 관련 설정 주석 처리
+/*
 def querydslDir = "$buildDir/generated/querydsl"
 querydsl {
     jpa = true
@@ -77,4 +84,4 @@ configurations {
 compileQuerydsl {
     options.annotationProcessorPath = configurations.querydsl
 }
-// querydsl 추가 끝
+*/
