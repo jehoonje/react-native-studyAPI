@@ -41,4 +41,4 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-application.yml
+application.ymlpath/to/application.yml
